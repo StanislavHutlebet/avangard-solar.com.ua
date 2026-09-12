@@ -1,0 +1,340 @@
+.ses-hero {
+    width: 100%;
+    overflow: hidden;
+}
+
+.ses-hero-flex {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ses-hero-left {
+    width: calc(50% - 15px);
+    border-radius: 20px;
+    background: rgba(251, 251, 245, 1);
+    padding: 40px;
+}
+
+.ses-hero-right {
+    width: calc(50% - 15px);
+    min-height: 716px;
+    overflow: hidden;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.ses-hero-right-list-flex {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.ses-hero-right-item-sep {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 24;
+    position: relative;
+}
+
+.ses-hero-right-item-sep:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 44px;
+    z-index: 24;
+    width: 1px;
+    transform: translate(-50%, -50%);
+    background: rgba(202, 196, 185, 1);
+}
+
+.ses-hero-right-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 20px;
+    height: 100%;
+    z-index: 2;
+}
+
+.ses-hero-right-bg:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: linear-gradient(180.00deg, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.9) 100%), linear-gradient(180.00deg, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.9) 100%);
+}
+
+.ses-hero-right-bg img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.ses-hero-right-list {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    padding: 56px 73px;
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ses-hero-right-item {
+    position: relative;
+    width: initial;
+    max-width: 33.33%;
+}
+
+.ses-hero-right-item-title {
+    color: rgba(255, 255, 255, 1);
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: 1px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.ses-hero-right-item-text {
+    color: rgba(255, 255, 255, 1);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.ses-hero-title {
+    color: rgba(36, 36, 36, 1);
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 60px;
+    letter-spacing: 3px;
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.ses-sub-title-after-hero {
+    display: flex;
+    align-items: center;
+    color: rgba(36, 36, 36, 1);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 29px;
+    letter-spacing: 2px;
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    gap: 34px;
+}
+
+.ses-sub-title-after-hero:after {
+    content: '';
+    display: block;
+    background: rgba(202, 196, 185, 1);
+    width: 40px;
+    height: 1px;
+    flex-grow: 2;
+}
+
+.ses-hero-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ses-hero-bottom-right {
+    width: 320px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.ses-hero-bottom-right .main-btn {
+    margin-top: 0;
+}
+
+.ses-hero-bottom-left {
+    width: calc(100% - 350px);
+    color: rgba(36, 36, 36, 1);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+
+
+@media screen and (min-width: 992px) {}
+
+@media screen and (max-width: 1670px) {
+
+    .ses-hero-right-list {
+        padding: 30px 24px;
+    }
+
+    .ses-hero-right-item-title {
+        font-size: 26px;
+        line-height: 26px;
+        margin-bottom: 16px;
+    }
+
+    .ses-hero-right {
+        min-height: 550px;
+    }
+
+    .ses-hero-bottom-left {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .ses-hero-right-item-text {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+@media screen and (max-width: 1420px) {
+    .ses-hero-bottom-left {
+        width: 100%;
+    }
+
+    .ses-hero-bottom {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .ses-hero-bottom-right {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (max-width: 1260px) {
+    .ses-hero-title {
+        font-size: 32px;
+        line-height: 40px;
+        margin-bottom: 40px;
+    }
+
+    .ses-sub-title-after-hero {
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .ses-hero-flex {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .ses-hero-left {
+        width: 100%;
+    }
+
+    .ses-hero-right {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .ses-hero-left {
+        padding: 24px;
+    }
+
+    .ses-sub-title-after-hero {
+        font-size: 12px;
+        gap: 16px;
+    }
+
+    .ses-hero-right {
+        min-height: 420px;
+    }
+
+    .ses-hero-right-list-flex {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .ses-hero-right-item-sep {
+        width: 100%;
+        height: 1px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .ses-hero-right-item-sep:after {
+        width: 100%;
+        height: 1px;
+    }
+
+    .ses-hero-right-item {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .ses-hero-right-item>div {
+        width: 45%;
+    }
+
+    .ses-hero-right-item-title {
+        font-size: 20px;
+        line-height: 20px;
+        margin-bottom: 8px;
+    }
+
+    .ses-hero-right-item-text {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .ses-hero-right-bg:after {
+        background: linear-gradient(180.00deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.9) 100%), linear-gradient(180.00deg, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.9) 100%);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .ses-hero-title {
+        font-size: 26px;
+        line-height: 32px;
+        margin-bottom: 24px;
+    }
+
+    .ses-sub-title-after-hero {
+        margin-bottom: 24px;
+    }
+
+    .ses-hero-bottom-left {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}

@@ -1,0 +1,514 @@
+.basket-page {
+    width: 100%;
+    padding-top: 177px;
+    padding-bottom: 120px;
+}
+
+.basket-page .m-2-top-left,
+.basket-page .m-2-top-right {
+    width: calc(50% - 40px);
+}
+
+.basket-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.basket-right {
+    border-radius: 20px;
+    background: rgba(234, 234, 234, 1);
+    padding: 20px;
+    width: 385px;
+}
+
+.basket-left {
+    width: calc(100% - 415px);
+}
+
+.basket-left-card-list {
+    width: 100%;
+    border-radius: 20px;
+    background: rgba(254, 252, 247, 1);
+    padding: 20px 30px;
+}
+
+.basket-card-item {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(201, 201, 201, 1);
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.basket-card-item-body {
+    flex-grow: 2;
+}
+
+.basket-card-item-body-title {
+    color: rgba(36, 36, 36, 1);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 1px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.basket-card-item-image {
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.basket-card-item-image img {
+    border-radius: 10px;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.basket-card-item:last-child {
+    border-bottom: none;
+}
+
+.basket-card-item-rgiht {
+    display: flex;
+    justify-content: flex-end;
+    gap: 50px;
+    align-items: center;
+}
+
+.basket-card-btn-delete {
+    width: 24px;
+    min-width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSIyNC4wMDAwMDAiIGhlaWdodD0iMjQuMDAwMDAwIiBmaWxsPSJub25lIj4KCTxyZWN0IGlkPSJpY29uLnN2ZyAtIDIwMjYtMDEtMDVUMTEzNTU3LjcyOCAxIiB3aWR0aD0iMjQuMDAwMDAwIiBoZWlnaHQ9IjI0LjAwMDAwMCIgeD0iMC4wMDAwMDAiIHk9IjAuMDAwMDAwIiBmaWxsPSJyZ2IoMjU1LDI1NSwyNTUpIiBmaWxsLW9wYWNpdHk9IjAiIC8+Cgk8ZyBpZD0iR3JvdXAiPgoJCTxnIGlkPSJHcm91cCI+CgkJCTxwYXRoIGlkPSJWZWN0b3IiIGQ9Ik0yLjkxNDA2IDcuMDMxMjVMNC4xNTk0OCAyMi4wNjU3QzQuMjQ4NzMgMjMuMTQ5OSA1LjE3MjI3IDI0IDYuMjYwNjEgMjRMMTcuNzM1OCAyNEMxOC44MjQyIDI0IDE5Ljc0NzcgMjMuMTQ5OSAxOS44MzcgMjIuMDY1N0wyMS4wODIzIDcuMDMxMjVMMi45MTQwNiA3LjAzMTI1Wk04LjQ4MTkyIDIxLjE4NzVDOC4xMTM4NiAyMS4xODc1IDcuODA0MiAyMC45MDEyIDcuNzgwODYgMjAuNTI4M0w3LjA3NzczIDkuMTg0NTVDNy4wNTM2OSA4Ljc5NjYxIDcuMzQ4MjUgOC40NjI5MSA3LjczNTUzIDguNDM4ODZDOC4xMzcyIDguNDEwNjkgOC40NTY1MSA4LjcwODcyIDguNDgxMjIgOS4wOTY2Nkw5LjE4NDM0IDIwLjQ0MDRDOS4yMDkyMyAyMC44NDIxIDguODkxMzcgMjEuMTg3NSA4LjQ4MTkyIDIxLjE4NzVaTTEyLjcwMTMgMjAuNDg0NEMxMi43MDEzIDIwLjg3MyAxMi4zODY4IDIxLjE4NzUgMTEuOTk4MiAyMS4xODc1QzExLjYwOTYgMjEuMTg3NSAxMS4yOTUxIDIwLjg3MyAxMS4yOTUxIDIwLjQ4NDRMMTEuMjk1MSA5LjE0MDYyQzExLjI5NTEgOC43NTE5OCAxMS42MDk2IDguNDM3NSAxMS45OTgyIDguNDM3NUMxMi4zODY4IDguNDM3NSAxMi43MDEzIDguNzUxOTggMTIuNzAxMyA5LjE0MDYyTDEyLjcwMTMgMjAuNDg0NFpNMTYuOTE4NyA5LjE4NDU5TDE2LjIxNTUgMjAuNTI4M0MxNi4xOTI0IDIwLjg5NzQgMTUuODg0OCAyMS4yMDUgMTUuNDY5OSAyMS4xODYxQzE1LjA4MjYgMjEuMTYyMSAxNC43ODggMjAuODI4NCAxNC44MTIxIDIwLjQ0MDVMMTUuNTE1MiA5LjA5NjdDMTUuNTM5MiA4LjcwODc3IDE1Ljg3OTEgOC40MjY1MyAxNi4yNjA5IDguNDM4OTFDMTYuNjQ4MiA4LjQ2Mjk1IDE2Ljk0MjcgOC43OTY2NiAxNi45MTg3IDkuMTg0NTlaIiBmaWxsPSJyZ2IoMjQxLjUxNCw5MC41Njc5LDkwLjU2NzkpIiBmaWxsLXJ1bGU9Im5vbnplcm8iIC8+CgkJPC9nPgoJPC9nPgoJPGcgaWQ9Ikdyb3VwIj4KCQk8ZyBpZD0iR3JvdXAiPgoJCQk8cGF0aCBpZD0iVmVjdG9yIiBkPSJNMjEuMTQwNiAyLjgxMjVMMTYuOTIxOSAyLjgxMjVMMTYuOTIxOSAyLjEwOTM4QzE2LjkyMTkgMC45NDYyMTkgMTUuOTc1NyAwIDE0LjgxMjUgMEw5LjE4NzUgMEM4LjAyNDM0IDAgNy4wNzgxMiAwLjk0NjIxOSA3LjA3ODEyIDIuMTA5MzhMNy4wNzgxMiAyLjgxMjVMMi44NTkzOCAyLjgxMjVDMi4wODI3IDIuODEyNSAxLjQ1MzEyIDMuNDQyMDggMS40NTMxMiA0LjIxODc1QzEuNDUzMTIgNC45OTUzMyAyLjA4MjcgNS42MjUgMi44NTkzOCA1LjYyNUM5LjMyNjUzIDUuNjI1IDE0LjY3MzcgNS42MjUgMjEuMTQwNiA1LjYyNUMyMS45MTczIDUuNjI1IDIyLjU0NjkgNC45OTUzMyAyMi41NDY5IDQuMjE4NzVDMjIuNTQ2OSAzLjQ0MjA4IDIxLjkxNzMgMi44MTI1IDIxLjE0MDYgMi44MTI1Wk0xNS41MTU2IDIuODEyNUw4LjQ4NDM4IDIuODEyNUw4LjQ4NDM4IDIuMTA5MzhDOC40ODQzOCAxLjcyMTQ0IDguNzk5NTYgMS40MDYyNSA5LjE4NzUgMS40MDYyNUwxNC44MTI1IDEuNDA2MjVDMTUuMjAwNCAxLjQwNjI1IDE1LjUxNTYgMS43MjE0NCAxNS41MTU2IDIuMTA5MzhMMTUuNTE1NiAyLjgxMjVaIiBmaWxsPSJyZ2IoMjQxLjUxNCw5MC41Njc5LDkwLjU2NzkpIiBmaWxsLXJ1bGU9Im5vbnplcm8iIC8+CgkJPC9nPgoJPC9nPgo8L3N2Zz4K");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.basket-card-btn-count-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.basket-card-btn-count-title {
+    color: rgba(36, 36, 36, 1);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.basket-card-btn-count-wrapper-active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border: 1px solid rgba(238, 234, 220, 1);
+    border-radius: 20px;
+    backdrop-filter: blur(41.79999923706055px);
+    background: rgba(251, 251, 245, 1);
+    padding: 8px 0;
+}
+
+.basket-card-btn-count-value {
+    width: 58px;
+    color: rgba(36, 36, 36, 1);
+    position: relative;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 1px;
+    text-align: center;
+    height: 34px;
+    border-left: 1px solid rgba(238, 234, 220, 1);
+    border-right: 1px solid rgba(238, 234, 220, 1);
+}
+
+.basket-card-btn-count-minus {
+    width: 32px;
+    height: 34px;
+    cursor: pointer;
+    display: block;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAgMi41MjgyNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgd2lkdGg9IjEwLjAwMDAwMCIgaGVpZ2h0PSIyLjUyODI1OSIgZmlsbD0ibm9uZSIgY3VzdG9tRnJhbWU9IiMwMDAwMDAiPgoJPHBhdGggaWQ9IisiIGQ9Ik0zLjczNTg4IDIuNTI4MjVMMy43MzU4OCAzLjYyMzk2ZS0wNUw2LjI2NDEyIDMuNjIzOTZlLTA1TDYuMjY0MTIgMi41MjgyNUwzLjczNTg4IDIuNTI4MjVaTTAgMi41MjgyNUwwIDBMMTAgMEwxMCAyLjUyODI1TDAgMi41MjgyNVoiIGZpbGw9InJnYigzNiwzNiwzNikiIGZpbGwtcnVsZT0ibm9uemVybyIgLz4KPC9zdmc+Cg==");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.basket-card-btn-count-plus {
+    width: 32px;
+    height: 34px;
+    cursor: pointer;
+    display: block;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAgMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSIxMC4wMDAwMDAiIGhlaWdodD0iMTAuMDAwMDAwIiBmaWxsPSJub25lIiBjdXN0b21GcmFtZT0iIzAwMDAwMCI+Cgk8cGF0aCBpZD0iKyIgZD0iTTMuNzM1ODggMTBMMy43MzU4OCAwTDYuMjY0MTIgMEw2LjI2NDEyIDEwTDMuNzM1ODggMTBaTTAgNi4yNjQxMkwwIDMuNzM1ODhMMTAgMy43MzU4OEwxMCA2LjI2NDEyTDAgNi4yNjQxMloiIGZpbGw9InJnYigzNiwzNiwzNikiIGZpbGwtcnVsZT0ibm9uemVybyIgLz4KPC9zdmc+Cg==");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.main-text {
+    width: 100% !important;
+}
+
+.basket-right-title {
+    color: rgba(36, 36, 36, 1);
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 1px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.basket-right-table {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-top: 1px solid rgba(201, 201, 201, 1);
+    border-bottom: 1px solid rgba(201, 201, 201, 1);
+}
+
+.basket-right-price-info {
+    color: rgba(88, 88, 88, 1);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 1px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.basket-right-table-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+}
+
+.basket-right-table-col {
+    width: calc(40% - 5px);
+    color: rgba(36, 36, 36, 1);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.basket-right-table-col:nth-child(2) {
+    width: calc(60% - 5px);
+    font-weight: bold;
+}
+
+.basket-right-btn-go-shop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(15, 35, 42, 1);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 23px;
+    letter-spacing: 0%;
+    text-align: left;
+    box-sizing: border-box;
+    border: 1px solid rgba(36, 36, 36, 1);
+    border-radius: 100px;
+    width: 100%;
+    padding: 19px 20px;
+}
+
+.basket-form {
+    border-radius: 20px;
+    background: rgba(254, 252, 247, 1);
+    padding: 30px 20px;
+    margin-top: 30px;
+}
+
+.basket-form-title {
+    color: rgba(36, 36, 36, 1);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 1px;
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.basket-form-text {
+    color: rgba(36, 36, 36, 1);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 1px;
+    text-align: left;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(201, 201, 201, 1);
+}
+
+.basket-form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.basket-form-col {
+    width: calc(50% - 12.5px);
+}
+
+.basket-form-input-item {
+    display: block;
+    width: 100%;
+}
+
+.basket-form-input-item input,
+.basket-form-input-item textarea {
+    box-sizing: border-box;
+    border: 1px solid rgba(202, 196, 185, 1);
+    padding: 20px 30px;
+    color: rgba(36, 36, 36, 1);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 1px;
+    text-align: left;
+    display: block;
+    width: 100%;
+    background: transparent;
+}
+
+.basket-form-input-item input {
+    border-radius: 100px !important;
+}
+
+.basket-form-input-item textarea {
+    height: 133px;
+    border-radius: 20px !important;
+}
+
+.basket-form-input-item input::placeholder,
+.basket-form-input-item textarea::placeholder {
+    color: rgba(36, 36, 36, 0.5);
+}
+
+.basket-form-label {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 1px;
+    text-align: left;
+    color: rgba(36, 36, 36, 1);
+    margin-bottom: 10px;
+}
+
+.basket-form-label .red {
+    color: rgba(249, 151, 124, 1);
+}
+
+.basket-form-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    background: rgba(249, 151, 124, 1);
+    color: rgba(15, 35, 42, 1);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 23px;
+    letter-spacing: 0%;
+    text-align: center;
+    cursor: pointer;
+    width: 300px;
+    padding: 19px 20px;
+    max-width: 100%;
+    margin-left: auto;
+}
+
+@media screen and (min-width: 992px) {
+    .basket-form-btn:hover {
+        background: rgb(242 101 63);
+    }
+}
+
+@media screen and (max-width: 1360px) {
+    .basket-card-btn-count-wrapper {
+        flex-direction: column;
+        gap: 8px;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .basket-card-item-rgiht {
+        gap: 32px;
+    }
+}
+
+@media screen and (max-width: 1160px) {
+
+    .basket-page .m-2-top-left,
+    .basket-page .m-2-top-right {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .basket-page {
+        padding-top: 120px;
+        padding-bottom: 80px;
+    }
+
+    .basket-body {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .basket-right {
+        width: 100%;
+        margin-bottom: 24px;
+    }
+
+    .basket-left {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .basket-card-item-body {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .basket-card-item {
+        flex-wrap: wrap;
+        gap: 0;
+        position: relative;
+    }
+
+    .basket-card-item-image {
+        width: 64px;
+        height: 64px;
+        min-width: 64px;
+    }
+
+    .basket-card-item-body-title {
+        font-size: 14px;
+    }
+
+    .basket-card-btn-delete {
+        position: absolute;
+        top: 20px;
+        right: 0;
+    }
+
+    .basket-card-btn-count-wrapper {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+    }
+
+    .basket-form-col {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .basket-form-col:last-child {
+        margin-bottom: 0;
+    }
+
+    .basket-form-row {
+        flex-wrap: wrap;
+    }
+
+    .basket-form-input-item input,
+    .basket-form-input-item textarea {
+        padding: 14px 20px;
+    }
+
+    .basket-form-btn {
+        width: 100%;
+    }
+
+    .basket-card-item-rgiht {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .basket-card-price-box {
+        display: flex;
+        flex-direction: row !important;
+        gap: 12px;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .basket-card-item-rgiht {
+        gap: 12px;
+    }
+}
+
+
+
+.defpage,
+.defpage > .wrapper {
+    width: 100%;
+    padding: 0;
+}
+
+.defpage .fepage-title {
+    display: none !important;
+}
+
+.cart-items--input,
+.cart-total--input {
+    display: none !important;
+}
+
+.wpcf7-form-control-wrap {
+    display: block;
+    width: 100%;
+}
+
+.basket-form-row p {
+    width: 100%;
+}
+
+.basket-card-price-box {
+    font-size: 14px;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.basket-card-price-box-sub-title {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.basket-card-price-box-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}

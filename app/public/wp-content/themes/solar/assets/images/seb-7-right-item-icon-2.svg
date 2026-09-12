@@ -1,0 +1,32 @@
+<svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="90.000000" height="90.000000" fill="none">
+	<defs>
+		<filter id="pixso_custom_mask_type_outline">
+			<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 " />
+		</filter>
+	</defs>
+	<mask id="mask_1" width="89.999992" height="89.999992" x="0.000000" y="0.000000" maskUnits="objectBoundingBox">
+		<g filter="url(#pixso_custom_mask_type_outline)">
+			<g id="clipPath611">
+				<path id="path609" d="M0 90L90 90L90 0L0 0L0 90Z" fill="rgb(255,255,255)" fill-rule="nonzero" transform="matrix(1,0,0,-1,0,90)" />
+			</g>
+		</g>
+	</mask>
+	<rect id="icon.svg - 2025-11-25T210318.716 1" width="90.000000" height="90.000000" x="0.000000" y="0.000000" fill="rgb(255,255,255)" fill-opacity="0" />
+	<g id="g603">
+		<g id="g605">
+			<g id="Clip path group" mask="url(#mask_1)">
+				<g id="g607">
+					<g id="g613">
+						<path id="path615" d="M42.3633 0C65.6627 0 84.7266 19.0638 84.7266 42.3633C84.7266 65.6627 65.6627 84.7266 42.3633 84.7266C19.0638 84.7266 0 65.6627 0 42.3633C0 19.0638 19.0638 0 42.3633 0Z" fill-rule="nonzero" stroke="rgb(249,151,124)" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.000000" transform="matrix(1,0,0,-1,2.63672,87.3633)" />
+					</g>
+					<g id="g617">
+						<path id="path619" d="M5.77231 29.5835C2.23453 26.4901 0 21.9435 0 16.875C0 7.55508 7.55508 0 16.875 0C26.1947 0 33.75 7.55508 33.75 16.875C33.75 21.8985 31.5548 26.4092 28.0716 29.5007" fill-rule="nonzero" stroke="rgb(249,151,124)" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.000000" transform="matrix(1,0,0,-1,28.125,61.875)" />
+					</g>
+					<g id="g621">
+						<path id="path623" d="M14.0625 0L0 0" stroke="rgb(249,151,124)" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.000000" transform="matrix(0,-1,-1,-0,45,37.9688)" />
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>

@@ -1,0 +1,188 @@
+.seb-8-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.seb-8-left {
+    width: calc(50% - 15px);
+}
+
+.seb-8-right {
+    width: calc(50% - 45px);
+    border-radius: 30px;
+    background: rgba(230, 230, 230, 1);
+    padding: 20px 30px;
+}
+
+.seb-8-title {
+    color: rgba(36, 36, 36, 1);
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 68px;
+    letter-spacing: 5px;
+    text-align: left;
+    text-transform: uppercase;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(202, 196, 185, 1);
+}
+
+.seb-8-text-after-title {
+    color: rgba(36, 36, 36, 1);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 2px;
+    text-align: left;
+    width: 714px;
+    max-width: 100%;
+}
+
+.seb-8-right-item {
+    padding-bottom: 16px;
+    padding-top: 16px;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 1px solid rgba(202, 196, 185, 1);
+}
+
+.seb-8-right-item:last-child {
+    border-bottom: none;
+}
+
+.seb-8-right-item-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.seb-8-right-item-btn {
+    background: rgba(240, 240, 240, 1);
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    position: relative;
+    min-width: 48px;
+    transition: 0.25s;
+}
+
+.seb-8-right-item-btn:after {
+    content:'';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+    height: 18px;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjkuMzYxMyAyOS4zNjIzIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjkuMzYxMzI4IiBoZWlnaHQ9IjI5LjM2MjMwNSIgZmlsbD0ibm9uZSIgY3VzdG9tRnJhbWU9IiMwMDAwMDAiPgoJPHBhdGggaWQ9IkFycm93IDIgKFN0cm9rZSkiIGQ9Ik0xOS4zNjkzIDExLjg1ODNDMTkuOTEzMyAxMS4zMTQzIDE5LjkxMzMgMTAuNDMyNiAxOS4zNjkzIDkuODg4NjhMOS40ODA2MyAtMy45MzA0OGUtMDVMNy41MTEwNSAxLjk2OTU0TDE1LjAyMjEgOS40ODA2MUwwIDkuNDgwNjFMMCAxMi4yNjYzTDE1LjAyMjEgMTIuMjY2M0w3LjUxMTA1IDE5Ljc3NzRMOS40ODA2MyAyMS43NDY5TDE5LjM2OTMgMTEuODU4M1oiIGZpbGw9InJnYigzNiwzNiwzNikiIGZpbGwtcnVsZT0iZXZlbm9kZCIgdHJhbnNmb3JtPSJtYXRyaXgoMC43MDcxMDcsLTAuNzA3MTA3LDAuNzA3MTA3LDAuNzA3MTA3LDAsMTMuOTg0OSkiIC8+Cjwvc3ZnPgo=");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.seb-8-right-item-text {
+    max-height: 0;
+    transition: 0.25s;
+    overflow: hidden;
+    color: rgba(36, 36, 36, 1);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.seb-8-right-item-text p {
+    margin-bottom: 20px;
+}
+
+.seb-8-right-item-text *:last-child {
+    margin-bottom: 0;
+}
+
+.seb-8-right-item-title-text {
+    color: rgba(36, 36, 36, 1);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 2px;
+    text-align: left;
+}
+
+.seb-8-right-item.active .seb-8-right-item-text {
+    max-height: 600px;
+    padding-top: 12px;
+}
+
+.seb-8-right-item.active .seb-8-right-item-btn {
+    transform: rotate(90deg);
+    background: rgba(249, 151, 124, 1);
+}
+
+@media screen and (max-width: 1600px) {
+    .seb-8-title {
+        font-size: 32px;
+        line-height: 40px;
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+
+    .seb-8-flex {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .seb-8-left {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .seb-8-right {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+   
+
+    .seb-8-text-after-title {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .seb-8 .main-btn {
+        margin-top: 24px;
+    }
+
+    .seb-8-right-item-title-text {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .seb-8-right {
+        padding: 12px 16px;
+    }
+
+    .seb-8-right-item-btn {
+        width: 36px;
+        min-width: 36px;
+        height: 36px;
+    }
+
+    .seb-8-right-item-text {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .seb-8-right-item {
+        padding-bottom: 16px;
+        padding-top: 16px;
+    }
+}

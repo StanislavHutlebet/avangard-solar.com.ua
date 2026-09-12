@@ -1,0 +1,75 @@
+/* Channel launcher: custom bubble over the SendPulse widget.
+   On click — Telegram bot or the on-site chat. Global front-end widget. */
+
+.avs-chat {
+    position: fixed;
+    right: 20px;                               /* matches the SendPulse widget position */
+    bottom: 10px;
+    z-index: 999998;
+    font: 500 15px/1.25 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+.avs-chat[hidden] { display: none; }
+.avs-chat.is-hidden { opacity: 0; pointer-events: none; }   /* while the SendPulse panel is open */
+
+.avs-chat__fab {
+    width: 64px; height: 64px;
+    display: flex; align-items: center; justify-content: center;
+    border: 0; border-radius: 50%;
+    background: #2ed452;                       /* SendPulse widget green (rgb 46,212,82) */
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .22);
+    cursor: pointer; padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform .18s ease;
+}
+.avs-chat__fab:hover { transform: scale(1.05); }
+.avs-chat__fab svg { width: 30px; height: 30px; fill: #fff; }
+.avs-chat__fab .avs-ico-close { display: none; }
+.avs-chat.is-open .avs-chat__fab .avs-ico-chat  { display: none; }
+.avs-chat.is-open .avs-chat__fab .avs-ico-close { display: block; }
+
+.avs-chat__menu {
+    position: absolute; right: 0; bottom: calc(100% + 14px);
+    display: flex; flex-direction: column; align-items: flex-end; gap: 10px;
+    opacity: 0; visibility: hidden; transform: translateY(8px);
+    transition: opacity .18s ease, transform .18s ease, visibility .18s;
+}
+.avs-chat.is-open .avs-chat__menu { opacity: 1; visibility: visible; transform: none; }
+
+.avs-chat__item {
+    display: flex; align-items: center; gap: 10px;
+    white-space: nowrap;
+    background: #fff; color: #111827;
+    border: 0; border-radius: 14px;
+    padding: 9px 14px 9px 9px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .18);
+    cursor: pointer; text-decoration: none;
+    font: inherit;
+    transition: transform .15s ease;
+}
+.avs-chat__item:hover { transform: translateX(-3px); }
+.avs-chat__ico {
+    width: 34px; height: 34px; flex: none;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+}
+.avs-chat__ico svg { width: 20px; height: 20px; fill: #fff; }
+.avs-chat__ico--tg  { background: #229ED9; }
+.avs-chat__ico--web { background: #4dc247; }
+
+/* fallback: SendPulse button not found — our bubble becomes a solo Telegram button */
+.avs-chat.is-solo { bottom: 96px; }
+.avs-chat.is-solo .avs-chat__fab { background: #229ED9; }
+.avs-chat.is-solo .avs-chat__menu { display: none; }
+.avs-chat.is-solo .avs-ico-chat, .avs-chat.is-solo .avs-ico-close { display: none; }
+.avs-chat.is-solo .avs-ico-tg { display: block; }
+.avs-ico-tg { display: none; }
+
+@media (max-width: 767px) {
+    .avs-chat { right: 16px; }
+    .avs-chat__fab { width: 56px; height: 56px; }
+    .avs-chat__fab svg { width: 26px; height: 26px; }
+    .avs-chat.is-solo { bottom: 88px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .avs-chat, .avs-chat__fab, .avs-chat__item, .avs-chat__menu { transition: none; }
+}

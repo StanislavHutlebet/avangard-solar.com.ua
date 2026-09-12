@@ -1,0 +1,73 @@
+.seb-hero {
+    position: relative;
+    width: 100%;
+    z-index: 20;
+    background: linear-gradient(180.00deg, rgba(252, 252, 244, 1) 0%, rgba(243, 231, 207, 1) 100%);
+}
+
+.seb-hero-title {
+    color: rgba(36, 36, 36, 1);
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 52px;
+    letter-spacing: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    width: 914px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.seb-hero-text {
+    border-radius: 30px;
+    background: rgba(249, 151, 124, 1);
+    padding: 12px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 788px;
+    max-width: 100%;
+    color: rgba(36, 36, 36, 1);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    z-index: 20;
+    margin-bottom: 19px;
+}
+
+.seb-hero-image {
+    width: 861px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    bottom: -80px;
+    margin-top: -110px;
+}
+
+.seb-hero-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 992px) {
+    .seb-hero-title {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .seb-hero-text {
+        font-size: 16px;
+        line-height: 20px;
+        padding: 16px;
+    }
+    
+    .seb-hero-image {
+        bottom: -20px;
+    }
+}
