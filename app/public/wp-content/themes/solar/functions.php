@@ -100,6 +100,78 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     /**
+     * Без utm-міток у листі CF7 (exclude_blank=1) рядки UTM Source/Medium
+     * повністю зникають — і органіка, і пряме відвідування виглядають так,
+     * ніби форма взагалі не проставила джерело. Тому для візитів без
+     * utm-міток визначаємо джерело з document.referrer і зберігаємо його в
+     * ті самі utm_source/utm_medium, щоб рядок у листі не губився.
+     */
+    const hasUtmInUrl = keys.some(function(key) {
+        return key !== 'fbadid' && !!urlParams.get(key);
+    });
+
+    if (!hasUtmInUrl && !localStorage.getItem('utm_source')) {
+
+        const referrer = document.referrer;
+        let referrerHost = '';
+
+        try {
+            referrerHost = referrer ? new URL(referrer).hostname.replace(/^www\./, '') : '';
+        } catch (e) {}
+
+        const currentHost = window.location.hostname.replace(/^www\./, '');
+
+        // Реферер із того самого сайту — це внутрішня навігація, а не вхід у
+        // сесію; не підміняти джерело.
+        if (!referrerHost || referrerHost !== currentHost) {
+
+            let fallback = null;
+
+            if (!referrerHost) {
+                fallback = { utm_source: 'direct', utm_medium: 'none' };
+            } else {
+                const searchEngines = ['google.', 'bing.', 'yahoo.', 'duckduckgo.', 'yandex.', 'ecosia.', 'ask.com'];
+                const socialHosts = ['facebook.com', 'instagram.com', 'l.instagram.com', 'lm.facebook.com', 't.co', 'twitter.com', 'x.com', 'linkedin.com', 'tiktok.com'];
+
+                if (searchEngines.some(function(engine) { return referrerHost.indexOf(engine) !== -1; })) {
+                    fallback = { utm_source: referrerHost.split('.')[0] || referrerHost, utm_medium: 'organic' };
+                } else if (socialHosts.indexOf(referrerHost) !== -1) {
+                    fallback = { utm_source: referrerHost, utm_medium: 'organic-social' };
+                } else {
+                    fallback = { utm_source: referrerHost, utm_medium: 'referral' };
+                }
+            }
+
+            Object.keys(fallback).forEach(function(key) {
+                localStorage.setItem(key, fallback[key]);
+                document.cookie =
+                    key + '=' + encodeURIComponent(fallback[key]) +
+                    '; path=/; max-age=' + (60 * 60 * 24 * 30) +
+                    '; SameSite=Lax';
+            });
+        }
+    }
+
+    /**
+     * Сторінка, з якої почалася сесія (перший вхід на сайт) — окремо від
+     * сторінки, з якої відправлена заявка (inp-page-name, заповнюється в
+     * script.js з data-page футера). Показує, яка саме сторінка (часто
+     * стаття блогу з органіки) привела відвідувача вперше. Перезаписуємо
+     * тільки при новому вході: з'явилась utm-мітка в URL, або це перший
+     * візит (ще нічого не збережено) — внутрішня навігація не чіпає значення.
+     */
+    if (hasUtmInUrl || !localStorage.getItem('landing_page')) {
+
+        const landingUrl = window.location.href;
+
+        localStorage.setItem('landing_page', landingUrl);
+        document.cookie =
+            'landing_page=' + encodeURIComponent(landingUrl) +
+            '; path=/; max-age=' + (60 * 60 * 24 * 30) +
+            '; SameSite=Lax';
+    }
+
+    /**
      * Получение cookie
      */
     function getCookie(name) {
@@ -133,6 +205,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         });
 
+        // Сторінка входу — заповнюємо так само, але окремо від utm-ключів.
+        let landingPage = localStorage.getItem('landing_page') || getCookie('landing_page');
+
+        if (landingPage) {
+            document.querySelectorAll('input[name="landing_page"]').forEach(function(input) {
+                input.value = landingPage;
+            });
+        }
     }
 
     fillUtmInputs();

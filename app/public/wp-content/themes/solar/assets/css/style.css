@@ -1495,3 +1495,8 @@ div.form_item_type{
 		line-height: 32px;
 	}
 }
+
+/* Location select: keep "Ваша локація"/"Ваша локация" as the closed-field placeholder only, not as a pickable list item, so "Інший регіон" is the last real choice. */
+.jq-selectbox:has(select[name="location"]) .jq-selectbox__dropdown li:first-child {
+  display: none;
+}

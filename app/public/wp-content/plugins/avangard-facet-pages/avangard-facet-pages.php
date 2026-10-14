@@ -39,9 +39,18 @@ class Avangard_Facet_Pages {
 		// filter rather than printing a second, conflicting set of hreflang tags.
 		add_filter( 'pll_rel_hreflang_attributes', array( __CLASS__, 'filter_hreflang' ) );
 
+		// Polylang's language switcher (pll_the_languages()) also builds its URLs from
+		// the real queried object (the parent category) — same problem as hreflang,
+		// fixed via Polylang's own switcher filter instead.
+		add_filter( 'pll_translation_url', array( __CLASS__, 'filter_translation_url' ), 10, 2 );
+
 		// Pages with no clean BeRocket attribute to select (e.g. page 12) instead
 		// list explicit product IDs — restrict the main query to just those.
 		add_action( 'pre_get_posts', array( __CLASS__, 'restrict_to_product_ids' ) );
+
+		// Rank Math builds its sitemap only from real posts/terms — feed it these
+		// virtual pages via a dedicated provider.
+		add_filter( 'rank_math/sitemap/providers', array( __CLASS__, 'register_sitemap_provider' ) );
 	}
 
 	/**
@@ -1014,7 +1023,9 @@ class Avangard_Facet_Pages {
 			return;
 		}
 		self::$active_page = $page;
-		if ( ! empty( $page['filters_param'] ) ) {
+		// Only pre-select when the visitor has not picked a filter themselves —
+		// otherwise changing the brand in the filter widget would be overwritten.
+		if ( ! empty( $page['filters_param'] ) && empty( $_GET['filters'] ) ) {
 			$_GET['filters'] = $page['filters_param'];
 		}
 	}
@@ -1092,6 +1103,33 @@ class Avangard_Facet_Pages {
 		}
 		$hreflangs['x-default'] = home_url( $pages_by_lang['uk']['path'] );
 		return $hreflangs;
+	}
+
+	/** Language switcher URL for a virtual facet page: itself for the current language,
+	 * the registered counterpart for the other one. */
+	public static function filter_translation_url( $url, $lang_slug ) {
+		if ( ! self::$active_page ) {
+			return $url;
+		}
+		if ( $lang_slug === self::$active_page['lang'] ) {
+			return home_url( self::$active_page['path'] );
+		}
+		$counterpart = self::get_page( self::$active_page['counterpart'] );
+		if ( $counterpart && $counterpart['lang'] === $lang_slug ) {
+			return home_url( $counterpart['path'] );
+		}
+		return $url;
+	}
+
+	/** Loaded lazily from the filter, because this plugin loads before Rank Math and
+	 * the Provider interface does not exist yet at plugin-load time. */
+	public static function register_sitemap_provider( $providers ) {
+		if ( ! interface_exists( '\RankMath\Sitemap\Providers\Provider' ) ) {
+			return $providers;
+		}
+		require_once __DIR__ . '/class-facet-sitemap-provider.php';
+		$providers[] = new Avangard_Facet_Sitemap_Provider();
+		return $providers;
 	}
 }
 
