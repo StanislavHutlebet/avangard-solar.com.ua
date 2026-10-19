@@ -1,0 +1,41 @@
+name: Deploy to production (SFTP)
+
+# Заливає лише тему "solar" і наш плагін "avangard-facet-pages" — не весь
+# сайт (ядро WP/інші плагіни на хостингу керуються окремо, і їх небезпечно
+# перезаписувати наосліп з git).
+on:
+  push:
+    branches: [main]
+    paths:
+      - "app/public/wp-content/themes/solar/**"
+      - "app/public/wp-content/plugins/avangard-facet-pages/**"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (нічого реально не заливати, лише показати що буде залито)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Upload theme + plugin via SFTP
+        uses: Dylan700/sftp-upload-action@latest
+        with:
+          server: mycard.ftp.tools
+          username: mycard
+          password: ${{ secrets.SFTP_PASSWORD }}
+          port: 22
+          dry-run: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || 'false' }}
+          uploads: |
+            ./app/public/wp-content/themes/solar/ => ./wp-content/themes/solar/
+            ./app/public/wp-content/plugins/avangard-facet-pages/ => ./wp-content/plugins/avangard-facet-pages/
+          ignore: |
+            .DS_Store
