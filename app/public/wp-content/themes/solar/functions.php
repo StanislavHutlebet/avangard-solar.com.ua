@@ -4,6 +4,9 @@ add_filter( 'woocommerce_enable_block_cart', '__return_false' );
 add_filter( 'woocommerce_enable_block_checkout', '__return_false' );
 add_filter( 'woocommerce_should_load_block_assets', '__return_false' );
 
+require_once 'inc/ip-utils.php';
+require_once 'inc/ip-blocklist.php';
+require_once 'inc/ip-geo-location.php';
 require_once 'inc/theme-function.php';
 require_once 'inc/post-types.php';
 require_once 'inc/assets.php';
