@@ -1,7 +1,8 @@
-<?php 
+<?php
     $post_fields = get_fields(get_the_ID());
     $lang = pll_current_language();
     $content = get_the_content();
+    $no_desc = !empty($args['no_desc']);
 ?>
 
 <div class="blog-card">
@@ -30,9 +31,11 @@
 			</a>
 		</h3>
         
+        <?php if (!$no_desc) : ?>
         <a href="<?php the_permalink(); ?>" class="blog-card-content-desc">
             <?php echo wp_trim_words($content, 20); ?>
         </a>
+        <?php endif; ?>
         <a href="<?php the_permalink(); ?>"  class="blog-card-content-tags">
             <?php
             $tags = get_the_terms(get_the_ID(), 'post_tag');

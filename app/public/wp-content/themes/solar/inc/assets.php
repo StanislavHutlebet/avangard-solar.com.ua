@@ -111,7 +111,7 @@ add_action('wp_head', function () {
         }
     }
 
-    if (is_page_template('templates/template-busines.php') ) {
+    if (is_page_template('templates/template-busines.php') || is_page_template('templates/template-uze-business.php') ) {
         $css_file = get_template_directory() . '/assets/css/ses-busines-preload.css';
 
         if (file_exists($css_file)) {
@@ -265,7 +265,20 @@ function assets_styles_and_scripts() {
         wp_enqueue_style( 'green-price', get_template_directory_uri() . "/assets/css/green-price.css" );
 	    wp_enqueue_script( 'green-price', get_template_directory_uri() . '/assets/js/green-price.js',  array('jquery'), '2.5.5', true );
     }
-    
+
+    if(is_page_template('templates/template-uze-business.php')){
+        wp_enqueue_style( 'parts-seb-3-offer');
+        wp_enqueue_style( 'parts-faq');
+	    wp_enqueue_script( 'parts-faq' );
+        wp_enqueue_style( 'parts-portfolio');
+        wp_enqueue_style( 'archive-post', get_template_directory_uri() . "/assets/css/archive-post.css" );
+
+        wp_enqueue_style( 'ses-busines', get_template_directory_uri() . "/assets/css/ses-busines.css" );
+	    wp_enqueue_script( 'ses-busines', get_template_directory_uri() . '/assets/js/ses-busines.js',  array('jquery'), '2.5.5', true );
+
+        wp_enqueue_style( 'uze-business', get_template_directory_uri() . "/assets/css/uze-business.css" );
+    }
+
     if(is_404()){
         wp_enqueue_style( 'page404', get_template_directory_uri() . "/assets/css/page-404.css" );
     }

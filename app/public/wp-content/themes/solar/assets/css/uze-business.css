@@ -1,0 +1,274 @@
+/* Форма «Яка окупність УЗЕ» (seb-3): показуємо поле "Споживання на місяць", а не "Ваша локація" — як на template-busines */
+.template-uze-business .seb-3 .form_item_spoj {
+    display: block;
+}
+
+.template-uze-business .seb-3 .form_item_locat {
+    display: none;
+}
+
+/* Hero: фото на всю ширину як фон (виходить за межі .wrapper), заголовок/підзаголовок і картка з кнопкою лежать поверх фото */
+.seb-hero--uze {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.seb-hero-bg {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: -180px;
+    padding-top: 190px;
+    height: calc(100% + 180px);
+    overflow: hidden;
+}
+
+.seb-hero-bg-head {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 24px;
+}
+
+.seb-hero-bg-head .seb-hero-title {
+    text-align: center;
+}
+
+.seb-hero-bg-photo {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.seb-hero-bg-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+}
+
+.seb-hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(90deg, rgba(243, 231, 207, 0) 38%, rgba(243, 231, 207, 0.92) 68%, rgba(243, 231, 207, 1) 82%);
+    pointer-events: none;
+}
+
+.seb-hero-bg-inner {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.seb-hero-bg-inner .main-btn {
+    pointer-events: auto;
+}
+
+.seb-hero-bg-head .seb-hero-text--plain {
+    position: relative;
+    background: transparent;
+    padding: 0 0 14px;
+    text-align: center !important;
+    margin: 0;
+    width: 460px;
+    max-width: 100%;
+    text-align: left;
+    color: rgba(36, 36, 36, 1);
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 26px;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.seb-hero-bg-head .seb-hero-text--plain::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 80px;
+    height: 3px;
+    background: var(--main-orange, #f3815a);
+}
+
+.seb-hero-aside {
+    position: absolute;
+    right: 0;
+    top: 40%;
+    transform: translateY(120%);
+    width: 380px;
+    max-width: 38%;
+    text-align: left;
+}
+
+.seb-hero-aside-text {
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 38px;
+    color: rgba(36, 36, 36, 1);
+    margin-bottom: 24px;
+}
+
+@media screen and (max-width: 1160px) {
+    .seb-hero--uze {
+        height: auto;
+    }
+
+    .seb-hero-bg {
+        height: auto;
+        margin-top: 0;
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 40px;
+    }
+
+    .seb-hero-bg::after {
+        background: linear-gradient(180deg, rgba(243, 231, 207, 0) 20%, rgba(243, 231, 207, 0.95) 65%, rgba(243, 231, 207, 1) 100%);
+    }
+
+    .seb-hero-bg-head .seb-hero-text--plain {
+        text-align: center;
+        border-bottom: none;
+        padding: 0;
+    }
+
+    .seb-hero-bg-inner {
+        position: static;
+        inset: auto;
+        pointer-events: auto;
+        margin-top: 30px;
+    }
+
+    .seb-hero-aside {
+        position: static;
+        top: auto;
+        right: auto;
+        transform: none;
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
+/* "Чому обирати" з фото зліва і нумерованим списком (01-04) замість темних карток з іконками */
+.seb-7--with-image {
+    background: transparent;
+}
+
+.seb-7--with-image .seb-7-left {
+    width: calc(50% - 15px);
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+}
+
+.seb-7--with-image .seb-7-left-title {
+    margin-bottom: 20px;
+}
+
+.seb-7-left-image {
+    margin-top: 30px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.seb-7-left-image img {
+    display: block;
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+}
+
+.seb-7-right--numbered {
+    width: calc(50% - 15px);
+    display: block;
+}
+
+.seb-7-right--numbered .seb-7-right-item {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    background: transparent;
+    border-radius: 0;
+    padding: 24px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(36, 36, 36, 0.1);
+}
+
+.seb-7-right--numbered .seb-7-right-item:first-child {
+    padding-top: 0;
+}
+
+.seb-7-right--numbered .seb-7-right-item:last-child {
+    border-bottom: none;
+}
+
+.seb-7-right-item-number {
+    flex: none;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--main-orange, #f3815a);
+}
+
+.seb-7-right--numbered .seb-7-right-item-title {
+    color: rgba(36, 36, 36, 1);
+    font-size: 38px;
+    line-height: 28px;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.seb-7-right--numbered .seb-7-right-item-text {
+    color: rgba(36, 36, 36, 1);
+    opacity: 0.6;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 1160px) {
+    .seb-7--with-image .seb-7-left,
+    .seb-7-right--numbered {
+        width: 100%;
+    }
+}
+
+/* Статті блогу — картки як на /blog-ua/, без опису */
+.uze-articles-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.uze-articles-list .blog-card {
+    width: calc(33.33% - 20px);
+}
+
+@media screen and (max-width: 1160px) {
+    .uze-articles-list .blog-card {
+        width: calc(50% - 15px);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .uze-articles-list .blog-card {
+        width: 100%;
+    }
+}
