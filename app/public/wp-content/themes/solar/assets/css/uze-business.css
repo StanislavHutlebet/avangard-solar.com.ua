@@ -124,6 +124,7 @@
 @media screen and (max-width: 1160px) {
     .seb-hero--uze {
         height: auto;
+        margin-top: -60px;
     }
 
     .seb-hero-bg {
@@ -133,6 +134,15 @@
         display: flex;
         flex-direction: column;
         padding-bottom: 40px;
+    }
+
+    .seb-hero-bg-head {
+        padding-top: 40px;
+        padding-bottom: 20px;
+    }
+
+    .seb-hero-bg-head .seb-hero-text--plain::after {
+        bottom: -12px;
     }
 
     .seb-hero-bg::after {
@@ -159,7 +169,13 @@
         transform: none;
         width: 100%;
         max-width: 100%;
-        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .seb-hero-aside-text {
+        display: none;
     }
 }
 
@@ -246,6 +262,18 @@
     .seb-7--with-image .seb-7-left,
     .seb-7-right--numbered {
         width: 100%;
+    }
+
+    .seb-7-right--numbered .seb-7-right-item-title {
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 0;
+    }
+
+    .seb-7-right--numbered .seb-7-right-item-text {
+        font-size: 16px;
+        line-height: 24px;
+        margin-top: -9px;
     }
 }
 
