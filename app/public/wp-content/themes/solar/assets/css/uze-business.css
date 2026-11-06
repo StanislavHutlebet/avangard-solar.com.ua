@@ -277,6 +277,13 @@
     }
 }
 
+@media screen and (max-width: 1160px) {
+    .template-uze-business .m-3 {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}
+
 /* Статті блогу — картки як на /blog-ua/, без опису */
 .uze-articles-list {
     display: flex;
