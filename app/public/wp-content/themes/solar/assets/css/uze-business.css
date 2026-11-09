@@ -39,20 +39,25 @@
 .seb-hero-bg-head .seb-hero-title {
     text-align: center;
     font-size: 48px;
+    width: 1100px;
 }
 
 .seb-hero-bg-photo {
     position: absolute;
     inset: 0;
     z-index: 1;
+    overflow: hidden;
 }
 
 .seb-hero-bg-photo img {
     display: block;
-    width: 100%;
+    position: absolute;
+    top: 0;
+    left: -7.5%;
+    width: 115%;
     height: 100%;
     object-fit: cover;
-    object-position: center 35%;
+    object-position: center 19%;
 }
 
 .seb-hero-bg::after {
