@@ -20,9 +20,9 @@
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    margin-top: -180px;
+    margin-top: -177px;
     padding-top: 190px;
-    height: calc(100% + 180px);
+    height: calc(100% + 177px);
     overflow: hidden;
 }
 
@@ -38,6 +38,7 @@
 
 .seb-hero-bg-head .seb-hero-title {
     text-align: center;
+    font-size: 48px;
 }
 
 .seb-hero-bg-photo {
@@ -119,6 +120,18 @@
     line-height: 38px;
     color: rgba(36, 36, 36, 1);
     margin-bottom: 24px;
+}
+
+.seb-hero-aside .main-btn {
+    font-size: 22px;
+    padding: 14px 14px 14px 36px;
+    margin-top: 0;
+}
+
+.seb-hero-aside .main-btn:after {
+    width: 56px;
+    min-width: 56px;
+    height: 56px;
 }
 
 @media screen and (max-width: 1160px) {
