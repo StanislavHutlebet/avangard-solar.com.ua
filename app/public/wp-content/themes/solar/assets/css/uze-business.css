@@ -109,8 +109,8 @@
     right: 0;
     top: 40%;
     transform: translateY(120%);
-    width: 380px;
-    max-width: 38%;
+    width: 460px;
+    max-width: 42%;
     text-align: left;
 }
 
@@ -123,9 +123,10 @@
 }
 
 .seb-hero-aside .main-btn {
-    font-size: 22px;
-    padding: 14px 14px 14px 36px;
+    font-size: 24px;
+    padding: 16px 18px 16px 44px;
     margin-top: 0;
+    white-space: nowrap;
 }
 
 .seb-hero-aside .main-btn:after {
