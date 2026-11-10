@@ -13,6 +13,11 @@
     overflow: hidden;
 }
 
+/* Коли показується wp-admin bar (32px), він зсуває сторінку вниз — компенсуємо, щоб низ hero не йшов під згин екрана */
+body.admin-bar .seb-hero--uze {
+    height: calc(100vh - 32px);
+}
+
 .seb-hero-bg {
     position: relative;
     width: 100vw;
@@ -131,16 +136,8 @@
 }
 
 .seb-hero-aside .main-btn {
-    font-size: 24px;
-    padding: 16px 18px 16px 44px;
     margin-top: 0;
     white-space: nowrap;
-}
-
-.seb-hero-aside .main-btn:after {
-    width: 56px;
-    min-width: 56px;
-    height: 56px;
 }
 
 @media screen and (max-width: 1160px) {
@@ -322,7 +319,7 @@
 }
 
 .template-uze-business .uze-articles.section {
-    margin-top: -120px;
+    margin-top: 0;
     padding-top: 60px;
 }
 
