@@ -71,9 +71,15 @@
 
 .seb-hero-bg-inner {
     position: absolute;
-    inset: 0;
+    top: 340px;
+    right: 0;
+    bottom: 0;
+    left: 0;
     z-index: 3;
     pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .seb-hero-bg-inner .main-btn {
@@ -110,9 +116,6 @@
 }
 
 .seb-hero-aside {
-    position: absolute;
-    right: 0;
-    bottom: 12%;
     width: 460px;
     max-width: 42%;
     text-align: left;
@@ -175,16 +178,16 @@
 
     .seb-hero-bg-inner {
         position: static;
-        inset: auto;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        display: block;
         pointer-events: auto;
         margin-top: 30px;
     }
 
     .seb-hero-aside {
-        position: static;
-        top: auto;
-        right: auto;
-        transform: none;
         width: 100%;
         max-width: 100%;
         display: flex;
@@ -215,6 +218,14 @@
 
 .seb-7--with-image .seb-7-left-title {
     margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1600px) {
+    .seb-7--with-image .seb-7-left-title {
+        font-size: 45px;
+        line-height: 48px;
+        margin-bottom: 24px;
+    }
 }
 
 .seb-7-left-image {
