@@ -276,7 +276,7 @@ function assets_styles_and_scripts() {
         wp_enqueue_style( 'ses-busines', get_template_directory_uri() . "/assets/css/ses-busines.css" );
 	    wp_enqueue_script( 'ses-busines', get_template_directory_uri() . '/assets/js/ses-busines.js',  array('jquery'), '2.5.5', true );
 
-        wp_enqueue_style( 'uze-business', get_template_directory_uri() . "/assets/css/uze-business.css" );
+        wp_enqueue_style( 'uze-business', get_template_directory_uri() . "/assets/css/uze-business.css", array(), filemtime( get_template_directory() . "/assets/css/uze-business.css" ) );
     }
 
     if(is_404()){
