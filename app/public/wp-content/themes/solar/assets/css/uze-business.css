@@ -300,11 +300,8 @@
     }
 }
 
-@media screen and (max-width: 1160px) {
-    .template-uze-business .m-3 {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-    }
+.template-uze-business .m-3 {
+    border-radius: 0;
 }
 
 /* Менше порожнього простору між FAQ і блоком статей блогу */
