@@ -112,8 +112,7 @@
 .seb-hero-aside {
     position: absolute;
     right: 0;
-    top: 40%;
-    transform: translateY(120%);
+    bottom: 12%;
     width: 460px;
     max-width: 42%;
     text-align: left;
