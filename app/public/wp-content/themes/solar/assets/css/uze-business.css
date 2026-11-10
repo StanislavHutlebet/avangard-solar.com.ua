@@ -77,8 +77,9 @@
     left: 0;
     z-index: 3;
     pointer-events: none;
+    padding-bottom: 48px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: flex-end;
 }
 
@@ -182,6 +183,7 @@
         right: auto;
         bottom: auto;
         left: auto;
+        padding-bottom: 0;
         display: block;
         pointer-events: auto;
         margin-top: 30px;
@@ -239,6 +241,7 @@
 
 .seb-7-right--numbered {
     width: calc(50% - 15px);
+    display: block;
 }
 
 .seb-7-right--numbered .seb-7-right-item {
