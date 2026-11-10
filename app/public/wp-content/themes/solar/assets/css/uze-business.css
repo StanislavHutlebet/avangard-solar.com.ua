@@ -232,7 +232,9 @@
 
 .seb-7-right--numbered {
     width: calc(50% - 15px);
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .seb-7-right--numbered .seb-7-right-item {
