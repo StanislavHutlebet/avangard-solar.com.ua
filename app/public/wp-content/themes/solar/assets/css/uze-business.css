@@ -74,7 +74,8 @@ body.admin-bar .seb-hero--uze {
     pointer-events: none;
 }
 
-.seb-hero-bg-inner {
+/* Селектор навмисно з батьківським класом (.seb-hero-bg .seb-hero-bg-inner), а не просто .seb-hero-bg-inner: на проді плагін комбінує CSS в один inline-тег, де базовий .wrapper (position: relative; padding: 0 40px) опиняється пізніше в каскаді і, маючи однакову специфічність з одним класом, перебиває ці властивості. Два класи в селекторі дають вищу специфічність, тож цей блок завжди виграє незалежно від порядку. */
+.seb-hero-bg .seb-hero-bg-inner {
     position: absolute;
     top: 340px;
     right: 0;
@@ -88,13 +89,13 @@ body.admin-bar .seb-hero--uze {
     justify-content: flex-end;
 }
 
-.seb-hero-bg-inner .main-btn {
+.seb-hero-bg .seb-hero-bg-inner .main-btn {
     pointer-events: auto;
 }
 
 /* На великих десктопних екранах (ширше за 16" MacBook) є більше вертикального запасу — піднімаємо блок вище, ніж на ноутбуках (до 15"/16" Mac) */
 @media screen and (min-width: 1730px) {
-    .seb-hero-bg-inner {
+    .seb-hero-bg .seb-hero-bg-inner {
         padding-bottom: 210px;
     }
 }
@@ -181,7 +182,7 @@ body.admin-bar .seb-hero--uze {
         padding: 0;
     }
 
-    .seb-hero-bg-inner {
+    .seb-hero-bg .seb-hero-bg-inner {
         position: static;
         top: auto;
         right: auto;
