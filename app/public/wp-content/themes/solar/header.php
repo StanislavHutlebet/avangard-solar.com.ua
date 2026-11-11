@@ -38,6 +38,10 @@
 	<body class="<?php
 			$classes = [];
 
+			if ( is_admin_bar_showing() ) {
+				$classes[] = 'admin-bar';
+			}
+
 			if (pll_current_language() === 'ru') {
 				$classes[] = 'ru-page';
 			}
