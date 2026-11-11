@@ -92,6 +92,13 @@ body.admin-bar .seb-hero--uze {
     pointer-events: auto;
 }
 
+/* На великих десктопних екранах (ширше за 16" MacBook) є більше вертикального запасу — піднімаємо блок вище, ніж на ноутбуках (до 15"/16" Mac) */
+@media screen and (min-width: 1730px) {
+    .seb-hero-bg-inner {
+        padding-bottom: 210px;
+    }
+}
+
 .seb-hero-bg-head .seb-hero-text--plain {
     position: relative;
     background: transparent;
