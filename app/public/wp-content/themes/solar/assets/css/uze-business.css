@@ -182,6 +182,13 @@ body.admin-bar .seb-hero--uze {
         padding: 0;
     }
 
+    /* .seb-hero-bg-head .seb-hero-title (два класи) має вищу специфічність за мобільний брейкпоінт .seb-hero-title з ses-busines-preload.css, тож без цього перевизначення font-size лишався 48px, а line-height падав до 36px — рядки заголовка накладались */
+    .seb-hero-bg-head .seb-hero-title {
+        font-size: 32px;
+        line-height: 40px;
+        width: 100%;
+    }
+
     .seb-hero-bg .seb-hero-bg-inner {
         position: static;
         top: auto;
