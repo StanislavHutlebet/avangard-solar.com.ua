@@ -163,7 +163,16 @@ body.admin-bar .seb-hero--uze {
         padding-bottom: 40px;
     }
 
+    /* З адмін-баром hero на мобільному підтягуємо вгору і даємо відступи, щоб заголовок не ховався під шапкою */
+    body.admin-bar .seb-hero--uze {
+        height: auto;
+        max-height: 100%;
+        margin-top: -110px;
+        padding: 130px 0 40px 0;
+    }
+
     .seb-hero-bg-head {
+        margin-top: 40px;
         padding-top: 40px;
         padding-bottom: 20px;
     }
