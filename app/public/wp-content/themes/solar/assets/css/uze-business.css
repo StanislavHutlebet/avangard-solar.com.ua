@@ -160,7 +160,7 @@ body.admin-bar .seb-hero--uze {
         padding-top: 30px;
         display: flex;
         flex-direction: column;
-        padding-bottom: 40px;
+        padding-bottom: 60px;
     }
 
     /* З адмін-баром hero на мобільному підтягуємо вгору і даємо відступи, щоб заголовок не ховався під шапкою */
@@ -193,8 +193,8 @@ body.admin-bar .seb-hero--uze {
 
     /* .seb-hero-bg-head .seb-hero-title (два класи) має вищу специфічність за мобільний брейкпоінт .seb-hero-title з ses-busines-preload.css, тож без цього перевизначення font-size лишався 48px, а line-height падав до 36px — рядки заголовка накладались */
     .seb-hero-bg-head .seb-hero-title {
-        font-size: 32px;
-        line-height: 40px;
+        font-size: 22px;
+        line-height: 28px;
         width: 100%;
     }
 
@@ -207,7 +207,7 @@ body.admin-bar .seb-hero--uze {
         padding-bottom: 0;
         display: block;
         pointer-events: auto;
-        margin-top: 30px;
+        margin-top: 180px;
     }
 
     .seb-hero-aside {
