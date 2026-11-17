@@ -7,6 +7,10 @@
 }
 
 @media screen and (max-width: 1160px) {
+    .seb-6-bg {
+        background-color: #000;
+    }
+
     .seb-6-bg .seb-6-bg-desktop {
         display: none;
     }
