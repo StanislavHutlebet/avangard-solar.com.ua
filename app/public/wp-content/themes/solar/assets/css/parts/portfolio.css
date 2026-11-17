@@ -129,7 +129,10 @@
         display: block;
     }
 
+    /* slick.css форсує display:flex на .slick-slide, що ламає аспект-рейшо трюк
+       (:after{padding-top:65%}) на .m-3-item-image — повертаємо звичайний block */
     .m-3-body.slick-initialized .m-3-item {
+        display: block;
         padding: 0 6px;
     }
 
