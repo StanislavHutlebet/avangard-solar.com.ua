@@ -133,37 +133,49 @@
        (:after{padding-top:65%}) на .m-3-item-image — повертаємо звичайний block */
     .m-3-body.slick-initialized .m-3-item {
         display: block;
-        padding: 0 6px;
+        padding: 0 8px;
+        border-radius: 20px;
+        overflow: hidden;
+        opacity: 0.4;
+        transform: scale(0.92);
+        transition: opacity 0.3s, transform 0.3s;
+    }
+
+    /* Активний (центральний) слайд — чіткий і в повний розмір, сусідні підглядання притлумлені */
+    .m-3-body.slick-initialized .m-3-item.slick-center {
+        opacity: 1;
+        transform: scale(1);
     }
 
     .m-3-body .slick-list {
-        margin: 0 -6px;
+        margin: 0 -8px;
     }
 
     .m-3-body .slick-prev.slick-arrow,
     .m-3-body .slick-next.slick-arrow {
         position: absolute;
-        top: 35%;
+        top: 40%;
         border-radius: 100%;
-        background: rgba(255, 255, 255, 0.5);
-        width: 36px;
-        height: 36px;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+        width: 34px;
+        height: 34px;
         font-size: 0;
         cursor: pointer;
-        z-index: 20;
+        z-index: 30;
         transform: translateY(-50%);
         background-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNy44MTY0MSAxMy41MDU5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNy44MTY0MDYiIGhlaWdodD0iMTMuNTA1ODU5IiBmaWxsPSJub25lIiBjdXN0b21GcmFtZT0iIzAwMDAwMCI+Cgk8cGF0aCBpZD0iVmVjdG9yIDEzIiBkPSJNMCAwTDYgNkwwIDEyIiBzdHJva2U9InJnYigzNiwzNiwzNikiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUwMDAwMCIgdHJhbnNmb3JtPSJtYXRyaXgoLTEsOC43NDIyOGUtMDgsLTguNzQyMjhlLTA4LC0xLDcuMDYyNSwxMi43NTI5KSIgLz4KPC9zdmc+Cg==");
         background-position: center;
         background-repeat: no-repeat;
-        background-size: 10px;
+        background-size: 9px;
     }
 
     .m-3-body .slick-prev.slick-arrow {
-        left: 4px;
+        left: 12%;
     }
 
     .m-3-body .slick-next.slick-arrow {
-        right: 4px;
+        right: 12%;
         transform: translateY(-50%) rotate(180deg);
     }
 }
