@@ -124,6 +124,12 @@
         width: 100%;
     }
 
+    /* Менший бічний відступ саме для блоку портфоліо на мобільному — щоб картці
+       було більше місця (глобальний .wrapper дає 20px з кожного боку) */
+    .m-3 .wrapper {
+        padding: 0 12px;
+    }
+
     /* На мобільному parts/portfolio.js вмикає slick на .m-3-body замість сітки */
     .m-3-body.slick-initialized {
         display: block;
@@ -133,7 +139,7 @@
        (:after{padding-top:65%}) на .m-3-item-image — повертаємо звичайний block */
     .m-3-body.slick-initialized .m-3-item {
         display: block;
-        padding: 0 8px;
+        padding: 0 4px;
         border-radius: 20px;
         overflow: hidden;
         opacity: 0.4;
@@ -148,7 +154,7 @@
     }
 
     .m-3-body .slick-list {
-        margin: 0 -8px;
+        margin: 0 -4px;
     }
 
     .m-3-body .slick-prev.slick-arrow,
@@ -171,11 +177,11 @@
     }
 
     .m-3-body .slick-prev.slick-arrow {
-        left: 12%;
+        left: 8px;
     }
 
     .m-3-body .slick-next.slick-arrow {
-        right: 12%;
+        right: 8px;
         transform: translateY(-50%) rotate(180deg);
     }
 }
