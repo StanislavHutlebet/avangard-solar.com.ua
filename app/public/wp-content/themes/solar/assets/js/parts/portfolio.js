@@ -18,8 +18,7 @@ jQuery(function ($) {
                     slidesToScroll: 1,
                     infinite: false,
                     arrows: false,
-                    dots: true,
-                    adaptiveHeight: true
+                    dots: true
                 });
             } else if (!e.matches && $body.hasClass("slick-initialized")) {
                 $body.slick("unslick");
