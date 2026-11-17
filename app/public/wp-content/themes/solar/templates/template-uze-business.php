@@ -252,12 +252,12 @@ $lang = pll_current_language();
 <div class="seb-6 section">
     <div class="seb-6-bg">
         <?php
-        if ( wp_is_mobile() ) {
-            // На мобільній версії цього блоку — окреме фото (не з ACF-поля bank_bg)
-            echo '<img src="' . esc_url( get_template_directory_uri() . '/assets/img/seb-6-bg-mobile.jpg' ) . '" alt="" loading="lazy">';
-        } elseif ( !empty( $fields['bank_bg'] ) ) {
-            echo wp_get_attachment_image( $fields['bank_bg'], 'full', null, ['class' => ''] );
+        // wp_is_mobile() визначає по User-Agent і ненадійний через кешування сторінки,
+        // тому обидва фото рендеряться завжди, а яке показати — вирішує CSS (@media) нижче.
+        if ( !empty( $fields['bank_bg'] ) ) {
+            echo wp_get_attachment_image( $fields['bank_bg'], 'full', null, ['class' => 'seb-6-bg-desktop'] );
         }
+        echo '<img class="seb-6-bg-mobile" src="' . esc_url( get_template_directory_uri() . '/assets/img/seb-6-bg-mobile.jpg' ) . '" alt="" loading="lazy">';
         ?>
     </div>
     <div class="wrapper">

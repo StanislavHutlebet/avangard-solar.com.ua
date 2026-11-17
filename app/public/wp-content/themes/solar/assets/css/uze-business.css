@@ -1,3 +1,21 @@
+/* seb-6 (банк/OTP): на десктопі показуємо фото з ACF (bank_bg), на мобільному — окреме фото seb-6-bg-mobile.jpg.
+   Перемикання через CSS, а не wp_is_mobile() в PHP, щоб не залежати від кешування сторінки на проді.
+   Селектори з батьківським класом (.seb-6-bg .seb-6-bg-mobile), а не просто .seb-6-bg-mobile: інакше той самий
+   collision, що й з .wrapper/.seb-hero-bg-inner — .seb-6-bg img (два селектори) переб'є одно-класовий display:none. */
+.seb-6-bg .seb-6-bg-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 1160px) {
+    .seb-6-bg .seb-6-bg-desktop {
+        display: none;
+    }
+
+    .seb-6-bg .seb-6-bg-mobile {
+        display: block;
+    }
+}
+
 /* Форма «Яка окупність УЗЕ» (seb-3): показуємо поле "Споживання на місяць", а не "Ваша локація" — як на template-busines */
 .template-uze-business .seb-3 .form_item_spoj {
     display: block;
