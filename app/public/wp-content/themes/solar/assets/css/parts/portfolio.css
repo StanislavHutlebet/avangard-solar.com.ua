@@ -123,6 +123,45 @@
     .m-3-item:nth-child(odd):after {
         width: 100%;
     }
+
+    /* На мобільному parts/portfolio.js вмикає slick на .m-3-body замість сітки */
+    .m-3-body.slick-initialized {
+        display: block;
+    }
+
+    .m-3-body.slick-initialized .m-3-item {
+        padding: 0 6px;
+    }
+
+    .m-3-body .slick-list {
+        margin: 0 -6px;
+    }
+
+    .m-3-body .slick-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        list-style: none;
+        margin: 16px 0 0;
+        padding: 0;
+    }
+
+    .m-3-body .slick-dots button {
+        display: none;
+    }
+
+    .m-3-body .slick-dots li {
+        width: 8px;
+        height: 8px;
+        border-radius: 100%;
+        background: rgba(255, 255, 255, 0.3);
+        transition: 0.25s;
+    }
+
+    .m-3-body .slick-dots li.slick-active {
+        background: rgba(255, 255, 255, 1);
+    }
 }
 
 @media screen and (max-width: 500px) {

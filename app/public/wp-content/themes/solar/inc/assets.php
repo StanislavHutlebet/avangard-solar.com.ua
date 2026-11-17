@@ -191,6 +191,7 @@ function assets_styles_and_scripts() {
 	wp_enqueue_script( 'main_js', get_template_directory_uri() . '/assets/js/script.js',  array('jquery'), '2.5.5', true );
     
     wp_register_style( 'parts-portfolio', get_template_directory_uri() . '/assets/css/parts/portfolio.css' );
+    wp_register_script( 'parts-portfolio', get_template_directory_uri() . '/assets/js/parts/portfolio.js', array('jquery', 'slick'), '2.5.5', true);
 
     wp_register_style( 'parts-ses-4-calc', get_template_directory_uri() . '/assets/css/parts/ses-4-calc.css' );
     wp_register_script( 'parts-ses-4-calc', get_template_directory_uri() . '/assets/js/parts/ses-4-calc.js', array('jquery'), '2.5.5', true);
@@ -216,6 +217,9 @@ function assets_styles_and_scripts() {
 
     if(is_page_template('templates/template-main.php')){
         wp_enqueue_style( 'parts-portfolio');
+        wp_enqueue_style( 'slick');
+        wp_enqueue_script( 'slick' );
+        wp_enqueue_script( 'parts-portfolio' );
         wp_enqueue_style( 'parts-m-2-services');
 	    wp_enqueue_script( 'parts-m-2-services' );
 
@@ -225,6 +229,9 @@ function assets_styles_and_scripts() {
 
     if(is_page_template('templates/template-enterprise.php')){
         wp_enqueue_style( 'parts-portfolio');
+        wp_enqueue_style( 'slick');
+        wp_enqueue_script( 'slick' );
+        wp_enqueue_script( 'parts-portfolio' );
         wp_enqueue_style( 'parts-ses-4-calc');
 	    wp_enqueue_script( 'parts-ses-4-calc' );
 
@@ -243,6 +250,9 @@ function assets_styles_and_scripts() {
 
     if(is_page_template('templates/template-ses-home.php')){
         wp_enqueue_style( 'parts-portfolio');
+        wp_enqueue_style( 'slick');
+        wp_enqueue_script( 'slick' );
+        wp_enqueue_script( 'parts-portfolio' );
         wp_enqueue_style( 'parts-ses-4-calc');
 	    wp_enqueue_script( 'parts-ses-4-calc' );
         wp_enqueue_style( 'parts-faq');
@@ -261,6 +271,9 @@ function assets_styles_and_scripts() {
         wp_enqueue_style( 'parts-seb-3-offer');
 
         wp_enqueue_style( 'parts-portfolio');
+        wp_enqueue_style( 'slick');
+        wp_enqueue_script( 'slick' );
+        wp_enqueue_script( 'parts-portfolio' );
 
         wp_enqueue_style( 'green-price', get_template_directory_uri() . "/assets/css/green-price.css" );
 	    wp_enqueue_script( 'green-price', get_template_directory_uri() . '/assets/js/green-price.js',  array('jquery'), '2.5.5', true );
@@ -271,6 +284,9 @@ function assets_styles_and_scripts() {
         wp_enqueue_style( 'parts-faq');
 	    wp_enqueue_script( 'parts-faq' );
         wp_enqueue_style( 'parts-portfolio');
+        wp_enqueue_style( 'slick');
+        wp_enqueue_script( 'slick' );
+        wp_enqueue_script( 'parts-portfolio' );
         wp_enqueue_style( 'archive-post', get_template_directory_uri() . "/assets/css/archive-post.css" );
 
         wp_enqueue_style( 'ses-busines', get_template_directory_uri() . "/assets/css/ses-busines.css" );
