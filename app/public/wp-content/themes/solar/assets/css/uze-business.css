@@ -8,12 +8,13 @@
 
 @media screen and (max-width: 1160px) {
     /* background-color на .seb-6-bg нічого не дає — img з object-fit:cover займає весь контейнер
-       і повністю закриває колір, тому темнити треба саме поверх фото через ::after */
+       і повністю закриває колір, тому темнити треба саме поверх фото через ::after.
+       Без z-index: .seb-6-bg не створює свій stacking context, тож явний z-index на ::after
+       "втікав" з нього і лягав поверх .wrapper з текстом, затемнюючи весь блок, а не лише фото. */
     .seb-6-bg::after {
         content: '';
         position: absolute;
         inset: 0;
-        z-index: 1;
         background: rgba(0, 0, 0, 0.65);
     }
 
