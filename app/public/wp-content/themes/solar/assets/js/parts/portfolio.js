@@ -17,8 +17,10 @@ jQuery(function ($) {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     infinite: false,
-                    arrows: false,
-                    dots: true
+                    arrows: true,
+                    dots: false,
+                    centerMode: true,
+                    centerPadding: "20%"
                 });
             } else if (!e.matches && $body.hasClass("slick-initialized")) {
                 $body.slick("unslick");
