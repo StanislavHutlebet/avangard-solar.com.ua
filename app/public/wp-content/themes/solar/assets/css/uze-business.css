@@ -7,8 +7,14 @@
 }
 
 @media screen and (max-width: 1160px) {
-    .seb-6-bg {
-        background-color: #000;
+    /* background-color на .seb-6-bg нічого не дає — img з object-fit:cover займає весь контейнер
+       і повністю закриває колір, тому темнити треба саме поверх фото через ::after */
+    .seb-6-bg::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: rgba(0, 0, 0, 0.5);
     }
 
     .seb-6-bg .seb-6-bg-desktop {
