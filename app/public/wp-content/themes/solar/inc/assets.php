@@ -190,8 +190,9 @@ function assets_styles_and_scripts() {
 	wp_enqueue_style( 'main_style', get_template_directory_uri() . "/assets/css/style.css" );
 	wp_enqueue_script( 'main_js', get_template_directory_uri() . '/assets/js/script.js',  array('jquery'), '2.5.5', true );
     
-    wp_register_style( 'parts-portfolio', get_template_directory_uri() . '/assets/css/parts/portfolio.css' );
-    wp_register_script( 'parts-portfolio', get_template_directory_uri() . '/assets/js/parts/portfolio.js', array('jquery', 'slick'), '2.5.5', true);
+    // filemtime() замість статичного рядка версії — щоб браузер не кешував стару версію після правок
+    wp_register_style( 'parts-portfolio', get_template_directory_uri() . '/assets/css/parts/portfolio.css', array(), filemtime( get_template_directory() . '/assets/css/parts/portfolio.css' ) );
+    wp_register_script( 'parts-portfolio', get_template_directory_uri() . '/assets/js/parts/portfolio.js', array('jquery', 'slick'), filemtime( get_template_directory() . '/assets/js/parts/portfolio.js' ), true);
 
     wp_register_style( 'parts-ses-4-calc', get_template_directory_uri() . '/assets/css/parts/ses-4-calc.css' );
     wp_register_script( 'parts-ses-4-calc', get_template_directory_uri() . '/assets/js/parts/ses-4-calc.js', array('jquery'), '2.5.5', true);
