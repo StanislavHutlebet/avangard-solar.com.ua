@@ -20,7 +20,7 @@ jQuery(function ($) {
                     arrows: true,
                     dots: false,
                     centerMode: true,
-                    centerPadding: "5%"
+                    centerPadding: "10%"
                 });
             } else if (!e.matches && $body.hasClass("slick-initialized")) {
                 $body.slick("unslick");
