@@ -183,7 +183,12 @@ body.admin-bar .seb-hero--uze {
         margin-top: -60px;
     }
 
+    .seb-hero-bg-photo {
+        background: white;
+    }
+
     .seb-hero-bg-photo img {
+        top: 40px;
         object-position: 17%;
     }
 
