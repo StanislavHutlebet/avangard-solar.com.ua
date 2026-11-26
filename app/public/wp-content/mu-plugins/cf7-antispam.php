@@ -4,8 +4,8 @@
  * Description: Silently blocks obvious bot submissions on Contact Form 7 forms without adding
  *              any extra step (captcha/quiz) for real visitors. Two checks: (1) a hidden
  *              honeypot field that real users never see or fill, (2) rejecting submissions
- *              where a free-text field contains a link, which legitimate callback-request
- *              submissions never do but the current spam wave always does.
+ *              where a field the visitor actually types into contains a link, which legitimate
+ *              callback-request submissions never do but the current spam wave always does.
  */
 
 define( 'SOLAR_CF7_HP_FIELD', 'cf7_leave_blank' );
@@ -19,7 +19,14 @@ add_filter( 'wpcf7_form_elements', function ( $content ) {
 } );
 
 // Reject the submission (silently, as CF7's own "spam" response) if the honeypot
-// was filled in, or if any user-typed field contains a link.
+// was filled in, or if a field the visitor actually typed into contains a link.
+//
+// Deliberately a whitelist, not "every POST field except a few known system ones":
+// the forms carry several hidden tracking fields (utm_*, inp-page-name,
+// inp-button-value, landing_page, ...) that legitimately hold a URL or page name,
+// and a blacklist approach broke every submission the first time one of those
+// (landing_page) wasn't in it. Only fields a human actually types free text into
+// are checked.
 add_filter( 'wpcf7_spam', function ( $spam ) {
 	if ( $spam ) {
 		return $spam;
@@ -29,27 +36,20 @@ add_filter( 'wpcf7_spam', function ( $spam ) {
 		return true;
 	}
 
-	// Fields that are never free-typed by the visitor (hidden/system/cart fields)
-	// are skipped so this never touches real checkout or tracking data.
-	$skip = array(
-		SOLAR_CF7_HP_FIELD,
-		'cart-items',
-		'cart-total',
-		'inp-page-name',
-		'inp-button-value',
-		'utm_source',
-		'utm_medium',
-		'utm_campaign',
-		'utm_term',
-		'utm_content',
+	$free_text_fields = array(
+		'inp-name',
+		'client-name',
+		'povidomlenniy',
+		'your-name',
+		'your-message',
 	);
 
-	foreach ( $_POST as $key => $value ) {
-		if ( 0 === strpos( $key, '_wpcf7' ) || 0 === strpos( $key, '_wp' ) || in_array( $key, $skip, true ) ) {
+	foreach ( $free_text_fields as $key ) {
+		if ( empty( $_POST[ $key ] ) ) {
 			continue;
 		}
 
-		$text = is_array( $value ) ? implode( ' ', $value ) : (string) $value;
+		$text = is_array( $_POST[ $key ] ) ? implode( ' ', $_POST[ $key ] ) : (string) $_POST[ $key ];
 
 		if ( preg_match( '#https?://|www\.[a-z0-9-]+\.[a-z]{2,}#i', $text ) ) {
 			return true;
